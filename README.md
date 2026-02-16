@@ -63,10 +63,10 @@ A CMN file is a JSON object with the following top-level structure:
     "count": 4
   },
   "games": [
-    { "winner": 0, "hammer": 0, "scores": [20, 5], "twenties": [2, 0] },
-    { "winner": 1, "hammer": 1, "scores": [15, 20], "twenties": [0, 1] },
-    { "winner": 0, "hammer": 0, "scores": [20, 10], "twenties": [1, 0] },
-    { "winner": 0, "hammer": 1, "scores": [15, 5], "twenties": [0, 0] }
+    { "winner": 0, "scores": [20, 5], "twenties": [2, 0] },
+    { "winner": 1, "scores": [15, 20], "twenties": [0, 1] },
+    { "winner": 0, "scores": [20, 10], "twenties": [1, 0] },
+    { "winner": 0, "scores": [15, 5], "twenties": [0, 0] }
   ],
   "winner": 0
 }
@@ -114,6 +114,13 @@ Each entry in `games` represents one completed game (a single round of play wher
 | `hammer` | integer | No | Which team shot first (had the hammer). `0` = team 1, `1` = team 2. |
 | `scores` | array | No | Two-element array `[team1Score, team2Score]`. Raw (pre-cancellation) point totals for the game. |
 | `twenties` | array | No | Two-element array `[team1Twenties, team2Twenties]`. Count of 20s (center hole shots) per team. |
+
+Example with hammer tracking (hammer alternates each game):
+
+```json
+{ "winner": 0, "hammer": 0, "scores": [20, 5], "twenties": [2, 0] }
+{ "winner": 1, "hammer": 1, "scores": [15, 20], "twenties": [0, 1] }
+```
 
 ---
 
@@ -223,10 +230,10 @@ When `batch` is `true`, the top-level `event` and `source` apply to all matches 
     ],
     "gameFormat": { "type": "fixed", "count": 4 },
     "games": [
-      { "winner": 0, "scores": [20, 5], "twenties": [2, 0] },
-      { "winner": 1, "scores": [15, 20], "twenties": [0, 1] },
-      { "winner": 0, "scores": [20, 10], "twenties": [1, 0] },
-      { "winner": null, "scores": [10, 10], "twenties": [0, 0] }
+      { "winner": 0, "hammer": 0, "scores": [20, 5], "twenties": [2, 0] },
+      { "winner": 1, "hammer": 1, "scores": [15, 20], "twenties": [0, 1] },
+      { "winner": 0, "hammer": 0, "scores": [20, 10], "twenties": [1, 0] },
+      { "winner": null, "hammer": 1, "scores": [10, 10], "twenties": [0, 0] }
     ],
     "winner": 0
   },
@@ -269,14 +276,14 @@ When `batch` is `true`, the top-level `event` and `source` apply to all matches 
     ],
     "gameFormat": { "type": "first_to", "target": 5 },
     "games": [
-      { "winner": 0, "twenties": [1, 0] },
-      { "winner": 0, "twenties": [0, 0] },
-      { "winner": 1, "twenties": [0, 2] },
-      { "winner": 0, "twenties": [1, 0] },
-      { "winner": 1, "twenties": [0, 0] },
-      { "winner": 1, "twenties": [0, 1] },
-      { "winner": 0, "twenties": [2, 0] },
-      { "winner": 0, "twenties": [0, 0] }
+      { "winner": 0, "hammer": 0, "twenties": [1, 0] },
+      { "winner": 0, "hammer": 1, "twenties": [0, 0] },
+      { "winner": 1, "hammer": 0, "twenties": [0, 2] },
+      { "winner": 0, "hammer": 1, "twenties": [1, 0] },
+      { "winner": 1, "hammer": 0, "twenties": [0, 0] },
+      { "winner": 1, "hammer": 1, "twenties": [0, 1] },
+      { "winner": 0, "hammer": 0, "twenties": [2, 0] },
+      { "winner": 0, "hammer": 1, "twenties": [0, 0] }
     ],
     "winner": 0
   },
