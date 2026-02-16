@@ -1,8 +1,10 @@
 # Crokinole Match Notation (CMN)
 
-**Version:** 1.0-draft
-**Status:** Proposal
-**Authors:** Crokinole Open Data Alliance (CODA)
+| | |
+|---|---|
+| **Version** | 1.0-draft |
+| **Status** | Proposal |
+| **Authors** | Crokinole Open Data Alliance (CODA) |
 
 ---
 
