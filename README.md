@@ -49,7 +49,7 @@ A CMN file is a JSON object with the following top-level structure:
   "teams": [
     {
       "players": [
-        { "name": "Jeff Decker", "cid": "CRK-00142" }
+        { "name": "Jacob Decker", "cid": "CRK-00142" }
       ]
     },
     {
@@ -225,7 +225,7 @@ When `batch` is `true`, the top-level `event` and `source` apply to all matches 
     "date": "2026-02-11T19:30:00Z",
     "format": "singles",
     "teams": [
-      { "players": [{ "name": "Jeff Decker", "cid": "CRK-00142" }] },
+      { "players": [{ "name": "Jacob Decker", "cid": "CRK-00142" }] },
       { "players": [{ "name": "Maria Santos", "cid": "CRK-00087" }] }
     ],
     "gameFormat": { "type": "fixed", "count": 4 },
@@ -263,7 +263,7 @@ When `batch` is `true`, the top-level `event` and `source` apply to all matches 
     "teams": [
       {
         "players": [
-          { "name": "Jeff Decker", "cid": "CRK-00142" },
+          { "name": "Jacob Decker", "cid": "CRK-00142" },
           { "name": "Alex Kim" }
         ]
       },
